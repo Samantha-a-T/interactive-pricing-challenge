@@ -1,39 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive pricing component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Interactive pricing component | Samantha Thibault</title>
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      body {
+        background-image: url(/images/bg-pattern.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        font-family: sans-serif;
+        margin: 80px auto;
+      }
+      header {
+        background-image: url(/images/pattern-circles.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 20px;
+      }
+      h1,
+      h2 {
+        opacity: 0.7;
+      }
+      h2 {
+        font-weight: 500;
+        font-size: 15px;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      .slider {
+        appearance: none;
+        width: 100%;
+        height: 15px;
+        border-radius: 10px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
+        margin-bottom: 20px;
+      }
 
-  Pageviews
-  $ /month
+      .slider::-webkit-slider-thumb {
+        appearance: none;
+        width: 23px;
+        height: 24px;
+        border: 0;
+        background: url("/images/icon-slider.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 50px;
+        background-color: pink;
+      }
 
-  Monthly Billing
-  Yearly Billing 25% discount
+      .slider::-moz-range-thumb {
+        appearance: none;
+        width: 23px;
+        height: 24px;
+        border: 0;
+        padding: 40px;
+        background-color: pink;
+        background: url("/images/icon-slider.svg");
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+      .container {
+        max-width: 500px;
+        margin: 40px auto;
+        background-color: white;
+        border-radius: 5px;
+        padding: 20px 40px;
+      }
+      footer {
+        border-top: 1px solid black;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        padding-top: 20px;
+      }
+      button {
+        padding: 10px;
+      }
+      ul {
+        list-style: none;
+        text-align: start;
+      }
+      .discount{
+        background-color: rgba(228, 102, 102, 0.8);
+        border-radius: 30px;
+        padding: 5px;
+        font-size: 10px;
+        color:rgb(143, 2, 2)
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Simple, traffic-based pricing</h1>
+      <h2>Sign-up for our 30-day trial. No credit card required.</h2>
+    </header>
 
-  Unlimited websites
-  100% data ownership
-  Email reports
+    <div class="container">
+      <h3>Pageviews $ /month</h3>
 
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <div class="price-slider">
+        <input type="range" name="" id="" class="slider" />
+      </div>
+      Monthly Billing Yearly Billing <span class="discount">25% discount</span>
+
+      <footer>
+        <ul>
+          <li>
+            <img src="/images/icon-check.svg" alt="" /> Unlimited websites
+          </li>
+          <li>
+            <img src="/images/icon-check.svg" alt="" /> 100% data ownership
+          </li>
+          <li> <img src="/images/icon-check.svg" alt="" /> Email reports</li>
+        </ul>
+
+        <button>Start my trial</button>
+      </footer>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Samantha Thibault</a>.
+    </div>
+  </body>
 </html>
