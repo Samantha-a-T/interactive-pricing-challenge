@@ -90,25 +90,89 @@
       }
       footer {
         border-top: 1px solid black;
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         margin-top: 20px;
         padding-top: 20px;
       }
-      button {
-        padding: 10px;
+
+      .footer-button {
+        align-self: center;
+      }
+      footer button {
+        color: rgb(255, 255, 255, 0.9);
+        background-color: rgb(21, 15, 102);
+        padding: 5px 20px;
+        border-radius: 20px;
+        border: 1px solid rgb(21, 15, 102);
+        cursor: pointer;
       }
       ul {
         list-style: none;
         text-align: start;
       }
-      .discount{
+      .discount {
         background-color: rgba(228, 102, 102, 0.8);
         border-radius: 30px;
         padding: 5px;
         font-size: 10px;
-        color:rgb(143, 2, 2)
+        color: rgb(143, 2, 2);
       }
+
+
+
+
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.toggle-switch {
+  display: inline-block;
+  background: #ccc;
+  border-radius: 16px;
+  width: 58px;
+  height: 32px;
+  position: relative;
+  vertical-align: middle;
+  transition: 0.25s;
+}
+.toggle-switch:before, .toggle-switch:after {
+  content: "";
+}
+.toggle-switch:before {
+  display: block;
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.25s;
+}
+.toggle:hover .toggle-switch:before {
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background: #56c080;
+}
+.toggle-checkbox:checked + .toggle-switch:before {
+  left: 30px;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+
+.toggle-label {
+  margin-left: 5px;
+  position: relative;
+  top: 2px;
+}
     </style>
   </head>
   <body>
@@ -123,7 +187,12 @@
       <div class="price-slider">
         <input type="range" name="" id="" class="slider" />
       </div>
-      Monthly Billing Yearly Billing <span class="discount">25% discount</span>
+      Monthly Billing
+      <label class="toggle">
+        <input class="toggle-checkbox" type="checkbox" />
+        <div class="toggle-switch"></div>
+      </label>
+      Yearly Billing <span class="discount">25% discount</span>
 
       <footer>
         <ul>
@@ -133,10 +202,11 @@
           <li>
             <img src="/images/icon-check.svg" alt="" /> 100% data ownership
           </li>
-          <li> <img src="/images/icon-check.svg" alt="" /> Email reports</li>
+          <li><img src="/images/icon-check.svg" alt="" /> Email reports</li>
         </ul>
-
-        <button>Start my trial</button>
+        <div class="footer-button">
+          <button>Start my trial</button>
+        </div>
       </footer>
     </div>
 
